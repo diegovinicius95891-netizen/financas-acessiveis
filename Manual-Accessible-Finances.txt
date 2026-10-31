@@ -1,0 +1,67 @@
+MANUAL DO ACCESSIBLE FINANCES — VERSÃO 0.4.0
+
+1. COMEÇANDO
+Accessible Finances organiza receitas e despesas no Windows 10 ou 11 de 64 bits. As funções de lançamentos, relatórios e cópias de segurança funcionam sem internet. A IA e a busca de atualizações precisam de conexão.
+O instalador permite escolher a pasta, atalhos no menu Iniciar e atalho opcional na área de trabalho. A fixação na barra de tarefas é feita por você; consulte Ajuda, Como fixar na barra de tarefas.
+Este manual acompanha o aplicativo como Manual-Accessible-Finances.txt, na pasta de instalação. Também pode ser aberto pelo menu Ajuda ou pelo atalho do manual no menu Iniciar.
+
+2. NAVEGAÇÃO E NVDA
+Use Tab e Shift+Tab para percorrer controles, setas para ler textos e navegar em listas e Alt para acessar menus. O aplicativo envia avisos ao NVDA quando ele está em execução.
+Ctrl+1 abre Lançamentos; Ctrl+2, Relatórios; Ctrl+3, Sugestões; Ctrl+4, Configurações.
+Ctrl+N cria um lançamento. Ctrl+B cria uma cópia de segurança. F1 abre a ajuda de teclado.
+Escape fecha diálogos; na janela principal, sai do programa. Alt+F4 também sai. Em Configurações, você pode ativar Pedir confirmação para sair.
+No manual, na ajuda e nas novidades, o texto é somente leitura: use as setas para ler, Ctrl+Home para voltar ao início e Tab para chegar ao botão Fechar. Escape também fecha a janela.
+Em Configurações, escolha Lista ou Abas e salve. Reabra o programa para aplicar essa escolha.
+
+3. CADASTRANDO RECEITAS E DESPESAS
+Pressione Ctrl+N. O foco começa na data, no formato DD/MM/AAAA, por exemplo 31/10/2026.
+Preencha descrição, categoria, tipo (Despesa ou Receita) e valor em reais, por exemplo 150,00. Use valores positivos; o tipo determina se o dinheiro entra ou sai.
+Na categoria, selecione uma opção ou digite uma nova. Marque Memorizar esta categoria para próximos lançamentos se quiser reutilizá-la.
+Marque Despesa essencial quando fizer sentido. Escolha Salvar para concluir ou Cancelar para desistir.
+Os lançamentos aparecem agrupados por mês e ano. Só aparecem meses com registros. Seta direita expande um mês; seta esquerda recolhe; Enter no mês alterna entre aberto e fechado. Há botões para expandir ou recolher todos.
+Dentro de um mês, selecione um lançamento e pressione Enter para editar. Delete solicita confirmação antes de excluir. A exclusão não tem comando de desfazer.
+
+4. RELATÓRIOS
+Pressione Ctrl+2. Informe as datas inicial e final, sempre em DD/MM/AAAA. O período inclui as duas datas.
+Escolha Gerar relatório para ler os lançamentos e os totais de receitas, despesas e saldo. Use as setas para ler; Ctrl+A e Ctrl+C permitem copiar o texto.
+Exportar texto salva um arquivo TXT. Exportar planilha Excel salva um arquivo XLSX do período selecionado, mesmo sem ter gerado o texto antes. É necessário haver pelo menos um lançamento no período.
+Se o destino já existir, confirme a substituição apenas se desejar. Feche a planilha no Excel antes de tentar substituí-la.
+
+5. USANDO A PLANILHA EXCEL
+A exportação cria uma aba para cada mês com lançamentos, incluindo o ano no nome, e uma aba Como usar. Um período parcial exporta somente os dias selecionados; não representa necessariamente o mês inteiro.
+Cada mês tem receitas em B4, despesas em B5, saldo em B6, despesas essenciais em B7 e quantidade de lançamentos em B8. Essas células contêm fórmulas: não as substitua por números.
+A linha 11 contém os cabeçalhos da tabela. Os dados começam na linha 12:
+A: Data; B: Descrição; C: Categoria; D: Tipo; E: Valor; F: Essencial.
+As datas e os valores são dados de planilha, não textos formatados. Digite valores positivos. Em Tipo, use Receita ou Despesa. Em Essencial, use Sim ou Não. Alt+seta para baixo abre as listas de opções.
+No Excel, use Ctrl+Page Down e Ctrl+Page Up para trocar de aba, setas para percorrer as células e F2 para editar.
+Para inserir um lançamento, vá à última célula da tabela, na coluna F da última linha, e pressione Tab. O Excel acrescenta uma linha à tabela. Preencha os dados nessa nova linha. Os totais acompanham a expansão da tabela.
+Para excluir um lançamento, use o menu de contexto e exclua a linha da tabela. Apenas ocultar ou filtrar uma linha não a retira dos totais.
+As fórmulas recalculam quando você altera os dados no Excel. Se não atualizarem, escolha Fórmulas, Opções de cálculo, Automático.
+Alterar a data não muda uma linha de aba: mova o lançamento para a tabela do mês correto. Para iniciar outro mês, você pode duplicar uma aba, renomeá-la, ajustar o título e limpar os lançamentos antigos. Confira se as fórmulas B4:B8 apontam para a nova tabela, cujo nome aparece em Design da Tabela.
+As tabelas têm cabeçalhos identificados e não usam células mescladas. A leitura dos cabeçalhos depende da versão e das configurações do Excel e do leitor de tela.
+O arquivo funciona de maneira independente: alterações na planilha não voltam para o aplicativo. Não há importação de XLSX nesta versão. Salve uma cópia antes de editar se quiser preservar o relatório original.
+Datas anteriores a 01/01/1900 não são exportadas para Excel; para esses registros, use o relatório em texto.
+
+6. SUGESTÕES COM GEMINI (OPCIONAL)
+O programa funciona sem IA. Para ativá-la, obtenha sua própria chave de API no Google AI Studio, informe-a em Configurações, escolha um modelo disponível e salve. O uso está sujeito às condições, limites e eventuais cobranças do Google.
+Use Testar conexão para conferir a configuração sem enviar dados financeiros. Você também pode consultar os modelos disponíveis para sua chave. A disponibilidade dos modelos é definida pelo Google.
+Escolha o período em Relatórios e abra Sugestões. Ao pedir a análise, confira a prévia dos dados. Você pode desmarcar a inclusão das descrições, que podem conter informações pessoais.
+Somente ao confirmar Enviar ao Gemini os dados mostrados são enviados ao Google pela internet. Cancelar não envia esses dados. A análise considera despesas, categorias, valores, frequência, marcação de essencial e totais do período. Não ter receita registrada não significa não ter renda.
+A IA pode errar. Confira suas sugestões; ela não altera nem exclui lançamentos. Para períodos com mais de 1.000 registros, escolha um intervalo menor.
+Se houver erro de conexão, confira a internet e teste novamente. Erros de chave, modelo ou limite de uso exigem conferir a configuração e a conta do Google.
+
+7. DADOS E CÓPIAS DE SEGURANÇA
+Os dados ficam em %LOCALAPPDATA%\FinancasAcessiveis. A mudança do nome do programa não mudou essa pasta.
+Use Ctrl+B, escolha um destino e guarde a cópia em local seguro. A planilha exportada não substitui a cópia de segurança do banco.
+O banco financeiro não é criptografado. A chave do Gemini é protegida pelo Windows para o usuário que a salvou. Proteja sua conta do Windows e compartilhe relatórios apenas com quem desejar.
+Não há restauração por um botão nesta versão. Para recuperar uma cópia, preserve primeiro os arquivos atuais e procure suporte antes de substituir o banco. Não substitua arquivos de dados com o programa aberto.
+
+8. ATUALIZAÇÕES
+Em Ajuda, escolha Verificar atualizações para consultar manualmente. Em Configurações, você pode escolher verificar ao abrir, a cada intervalo de horas, ao abrir e por intervalo, ou em um horário diário. A verificação agendada acontece enquanto o aplicativo está aberto.
+O programa informa quando está verificando e quando não há atualizações disponíveis. Se houver uma nova versão, confirme o download e a instalação somente quando desejar.
+O atualizador confere a integridade do download, cria uma cópia de segurança e fecha o aplicativo para iniciar o instalador. Acompanhe as etapas do instalador. Seus registros e configurações são preservados.
+Ao abrir uma versão nova, você pode escolher ler as novidades. Elas também estão no menu Ajuda.
+
+9. SUPORTE E DOWNLOADS
+Baixe as versões publicadas e consulte as informações de suporte no GitHub. O repositório público distribui o aplicativo pronto e sua documentação.
+https://github.com/diegovinicius95891-netizen/financas-acessiveis/releases/latest
